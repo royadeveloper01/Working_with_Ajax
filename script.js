@@ -33,8 +33,12 @@ fetchBtn.addEventListener('click', function() {
 
 // Making requests with JQUERY
 $('#jquery').click(function() {
-    $.getJSON(apiUrl).then(function(data) {
+    $.getJSON(apiUrl)
+    .done(function(data) {
         $('#quotes').text(data[0])
+    })
+    .fail(function(err) {
+        console.log(err)
     })
 });
 
